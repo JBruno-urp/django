@@ -1,0 +1,200 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray background for the body */
+  }
+  
+          /* Estilos añadidos para resaltar botones y eliminar bordes de botones */
+  .edit-btn,.delete-btn {
+              background-color: #4CAF50;
+              color: white;
+              padding: 8px 12px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+          }
+  
+          .edit-btn:hover,
+          .delete-btn:hover {
+              background-color: #45a049;
+          }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db; /* Blue header background */
+    color: white;
+    padding: 20px;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-left img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .header-left .text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header-left .text-container p {
+    margin: 0; /* Eliminar el margen predeterminado del párrafo */
+  }
+  
+  /* Main container styles */
+  .main-container {
+    display: flex;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    background-color: #2980b9; /* Darker blue sidebar background */
+    color: white;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Increased font size for better readability */
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #e6f2ff; /* Lighter blue for hover effect */
+  }
+  
+  /* Content area styles */
+  #general {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+  }
+  
+  .months-container {
+    display: none;
+  }
+  
+  #general {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+  }
+  
+  .month-section {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-header h2 {
+    margin: 0;
+    font-size: 18px; /* Adjusted heading size for sections */
+  }
+  
+  .section-header button {
+    background-color: #3498db; /* Blue button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for buttons */
+  }
+  
+  .section-header button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .section-content {
+    width: 100%;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%; /* Ancho de tabla completo dentro de la sección */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    border-collapse: collapse;
+    max-width: 800px; /* Ancho máximo para mejorar la legibilidad */
+  }
+  
+  table th, table td {
+    padding: 10px; /* Espaciado interno para celdas */
+    border: 1px solid #ddd; /* Bordes de celdas */
+    text-align: left; /* Alineación de texto a la izquierda */
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #3498db; /* Blue color for edit/delete buttons */
+  }
+  
+  .edit-btn:hover,
+  .delete-btn:hover {
+    color: #2980b9; /* Darker blue on hover */
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #3498db; /* Blue footer background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
+  }

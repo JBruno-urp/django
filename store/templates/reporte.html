@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ventas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/reporte.css'%}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-left">
+        <h1>Reporte de Ventas</h1>
+        <p>Interfaz para observar el reporte de ventas</p>
+    </div>
+</header>
+
+<div class="main-container">
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#" onclick="showGeneral(event)">General</a>
+                <ul id="generalList">
+                    <li><a href="#" onclick="toggleReport(event)">Reporte 2024</a>
+                        <ul id="reportList">
+                            <li><a href="#" onclick="showMonth(event, 'Ventas del dia')">Ventas del dia</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="general" class="content">
+        <section id="venta del dia" class="month-section">
+            <div class="section-header">
+                <h2>Datos de Ventas - hoy    ganancia total={{suma}}</h2>
+                <button onclick="downloadPDF()">Descargar PDF</button>
+            </div>
+            <div class="section-content">
+                <p> productos completados</p>
+                <table id="tablaEnero">
+                    <thead>
+                        <tr>
+                            <th>codigo de producto</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Estado</th>
+                            <th>Costo (S/.)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in reporte %}
+                            <tr>
+                                <td>{{x.id}}</td>
+                                <td>{{ x.product.name }}</td>
+                                <td>{{ x.quantity }}</td>
+                                {% if x.status %}
+                                    <td><small class="badge badge-success">Completado</small></td>
+                                    <td>{{x.price}}</td>
+                                {% else %}
+                                    <td></td>
+                                    <td><small class="badge badge-danger">Pendiente</small></td>
+                                {% endif %}
+                                <td>
+                                    {{x.customer.first_name}}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                    
+                   
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
